@@ -1,0 +1,61 @@
+.pro-navbar {
+  padding: 0.65rem 0;
+}
+
+.pro-nav-wrapper {
+  padding: 0.3rem 0;
+}
+
+.pro-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.logo-image {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.22);
+}
+
+.pro-nav-menu {
+  gap: 0.35rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.9rem !important;
+  font-size: 0.95rem;
+  border-radius: 0.6rem;
+  transition: all 200ms ease;
+}
+
+.nav-link:hover {
+  background: rgba(8, 145, 178, 0.12) !important;
+  color: #0891b2 !important;
+}
+
+.nav-link.active {
+  background: rgba(8, 145, 178, 0.15) !important;
+  color: #0891b2 !important;
+  font-weight: 600;
+}
+
+.btn-sm-nav {
+  padding: 0.65rem 1.25rem !important;
+  font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+  .pro-nav-menu {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 0.7rem 1rem !important;
+  }
+}

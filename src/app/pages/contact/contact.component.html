@@ -1,0 +1,220 @@
+<div class="page-header contact-page-header">
+  <div class="container">
+    <h1>Contactez-Nous</h1>
+    <p>Nous sommes a votre ecoute pour repondre a tous vos besoins technologiques</p>
+    <div class="contact-header-chips">
+      <div class="contact-chip">
+        <i class="fas fa-clock"></i>
+        Réponse sous 24h
+      </div>
+      <div class="contact-chip">
+        <i class="fas fa-shield-alt"></i>
+        Données sécurisées
+      </div>
+      <div class="contact-chip">
+        <i class="fas fa-headset"></i>
+        Support dédié
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="contact section-padding">
+  <div class="container">
+    <div class="contact-wrapper">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Informations de Contact</h2>
+        <div class="info-items">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Adresse</h4>
+              <p>Bamako, Mali</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>contact&#64;softmali.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Téléphone</h4>
+              <p><a href="tel:+221774435752">+221 77 443 57 52</a></p>
+              <p><a href="tel:+221767689385">+221 76 768 93 85</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Horaires</h4>
+              <p>Lun-Ven: 8h00 - 18h00</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Forms -->
+      <div class="contact-forms">
+        <div class="form-tabs">
+          <button 
+            [class.active]="activeTab === 'contact'" 
+            (click)="switchTab('contact')">
+            Message
+          </button>
+          <button 
+            [class.active]="activeTab === 'quote'" 
+            (click)="switchTab('quote')">
+            Demande de Devis
+          </button>
+        </div>
+
+        <!-- Contact Form -->
+        <form *ngIf="activeTab === 'contact'" [formGroup]="contactForm" (ngSubmit)="onContactSubmit()" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" formControlName="name" required>
+              <span class="error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                Nom requis (min. 2 caractères)
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" formControlName="email" required>
+              <span class="error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                Email valide requis
+              </span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" formControlName="phone">
+            </div>
+            <div class="form-group">
+              <label for="company">Entreprise</label>
+              <input type="text" id="company" formControlName="company">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <input type="text" id="subject" formControlName="subject" required>
+            <span class="error" *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+              Sujet requis (min. 5 caractères)
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" formControlName="message" rows="5" required></textarea>
+            <span class="error" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+              Message requis (min. 10 caractères)
+            </span>
+          </div>
+
+          <div class="success-message" *ngIf="submitSuccess">
+            <i class="fas fa-check-circle"></i>
+            Message envoyé avec succès ! Nous vous répondrons rapidement.
+          </div>
+
+          <div class="error-message" *ngIf="submitError">
+            <i class="fas fa-exclamation-circle"></i>
+            Une erreur est survenue. Veuillez réessayer.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" [disabled]="contactForm.invalid || isSubmitting">
+            <i class="fas fa-paper-plane"></i>
+            {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer le message' }}
+          </button>
+        </form>
+
+        <!-- Quote Form -->
+        <form *ngIf="activeTab === 'quote'" [formGroup]="quoteForm" (ngSubmit)="onQuoteSubmit()" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quote-name">Nom complet *</label>
+              <input type="text" id="quote-name" formControlName="name" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-email">Email *</label>
+              <input type="email" id="quote-email" formControlName="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quote-phone">Téléphone *</label>
+              <input type="tel" id="quote-phone" formControlName="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-company">Entreprise *</label>
+              <input type="text" id="quote-company" formControlName="company" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Service souhaité *</label>
+              <select id="service" formControlName="service" required>
+                <option value="">Sélectionnez un service</option>
+                <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget estimé *</label>
+              <select id="budget" formControlName="budget" required>
+                <option value="">Sélectionnez une fourchette</option>
+                <option *ngFor="let range of budgetRanges" [value]="range">{{ range }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description du projet *</label>
+            <textarea id="description" formControlName="description" rows="5" required></textarea>
+            <span class="error" *ngIf="quoteForm.get('description')?.invalid && quoteForm.get('description')?.touched">
+              Description requise (min. 20 caractères)
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">Délai souhaité</label>
+            <input type="text" id="timeline" formControlName="timeline" placeholder="Ex: 2 mois">
+          </div>
+
+          <div class="success-message" *ngIf="submitSuccess">
+            <i class="fas fa-check-circle"></i>
+            Demande de devis envoyée ! Nous vous contacterons sous 24h.
+          </div>
+
+          <div class="error-message" *ngIf="submitError">
+            <i class="fas fa-exclamation-circle"></i>
+            Une erreur est survenue. Veuillez réessayer.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" [disabled]="quoteForm.invalid || isSubmitting">
+            <i class="fas fa-calculator"></i>
+            {{ isSubmitting ? 'Envoi en cours...' : 'Demander un devis' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

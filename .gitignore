@@ -1,0 +1,50 @@
+# Fichiers et dossiers à ignorer
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dépendances
+node_modules/
+bower_components/
+
+# Build
+dist/
+build/
+*.min.css
+*.min.js
+
+# Angular
+.angular/
+*.ngfactory.ts
+*.ngsummary.json
+*.metadata.json
+
+# Cache
+.cache/
+.temp/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Sauvegarde
+*.bak
+*.backup
+*.old
+
+# Fichiers temporaires
+*.tmp

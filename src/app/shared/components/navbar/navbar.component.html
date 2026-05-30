@@ -1,0 +1,26 @@
+<nav class="navbar pro-navbar" [class.scrolled]="isScrolled" id="navbar">
+  <div class="container">
+    <div class="nav-wrapper pro-nav-wrapper">
+      <a routerLink="/" class="logo pro-logo">
+        <!-- <img src="assets/logo.png" alt="Logo SOFTMALI" class="logo-image" /> -->
+        <span class="logo-text">SOFTMALI</span>
+      </a>
+      
+      <ul class="nav-menu pro-nav-menu" [class.active]="isMobileMenuOpen" id="navMenu">
+        <li><a routerLink="/" class="nav-link" [class.active]="isActive('/')">Accueil</a></li>
+        <li><a routerLink="/services" class="nav-link" [class.active]="isActive('/services')">Services</a></li>
+        <li><a routerLink="/about" class="nav-link" [class.active]="isActive('/about')">À propos</a></li>
+        <li><a routerLink="/contact" class="nav-link" [class.active]="isActive('/contact')">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions pro-nav-actions">
+        <a routerLink="/contact" class="btn btn-primary btn-sm-nav">Devis Gratuit</a>
+        <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" id="mobileToggle" aria-label="Menu" title="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

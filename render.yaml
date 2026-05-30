@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: softmali
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install && npm run build:prod
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NPM_VERSION
+        value: 9.6.7

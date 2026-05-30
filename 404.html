@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page non trouvée | SOFTMALI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: glitch 1s infinite;
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .error-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .suggestions {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .suggestions h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .suggestions ul {
+            list-style: none;
+        }
+        
+        .suggestions li {
+            margin: 0.5rem 0;
+        }
+        
+        .suggestions a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .suggestions a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-message {
+                font-size: 1.5rem;
+            }
+            
+            .error-description {
+                font-size: 1rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🔍</div>
+        <div class="error-code">404</div>
+        <h1 class="error-message">Page Non Trouvée</h1>
+        <p class="error-description">
+            Oups ! La page que vous recherchez semble avoir disparu dans le cyberespace.
+        </p>
+        
+        <div class="buttons">
+            <a href="index.html" class="btn">
+                <span>🏠</span>
+                Retour à l'accueil
+            </a>
+            <a href="contact.html" class="btn btn-outline">
+                <span>📞</span>
+                Nous contacter
+            </a>
+        </div>
+        
+        <div class="suggestions">
+            <h3>Pages Populaires</h3>
+            <ul>
+                <li>→ <a href="index.html">Accueil</a></li>
+                <li>→ <a href="services.html">Nos Services</a></li>
+                <li>→ <a href="about.html">À Propos</a></li>
+                <li>→ <a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+            Code d'erreur : 404 | Page non trouvée
+        </p>
+    </div>
+    
+    <script>
+        // Log 404 error for analytics
+        console.error('404 Error: Page not found -', window.location.href);
+        
+        // Send to Google Analytics if available
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: '404 Not Found',
+                page_location: window.location.href,
+                page_path: window.location.pathname
+            });
+        }
+    </script>
+</body>
+</html>

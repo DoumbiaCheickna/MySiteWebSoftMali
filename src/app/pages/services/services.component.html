@@ -1,0 +1,59 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Nos Services</h1>
+    <p>Des offres claires, orientées resultat, pour accelerer votre croissance digitale</p>
+  </div>
+</div>
+
+<section class="services section-padding">
+  <div class="container">
+    <div class="services-intro">
+      <span class="services-kicker">Accompagnement Premium</span>
+      <h2>Des prestations structurees comme une vraie offre conseil</h2>
+      <p>Chaque carte detaille votre valeur business, le delai moyen de livraison et un budget de reference.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let service of services; let i = index" [id]="service.id" [class.featured]="service.featured">
+        <div class="service-head">
+          <span class="service-badge" *ngIf="service.featured">Le plus demande</span>
+          <span class="service-category">{{ service.category }}</span>
+          <div class="service-icon">
+            <i [class]="service.icon"></i>
+          </div>
+        </div>
+
+        <h3>{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+
+        <div class="service-meta">
+          <span><i class="fas fa-clock"></i> Delai moyen: {{ service.timeline }}</span>
+          <span><i class="fas fa-layer-group"></i> Offre {{ i + 1 }}</span>
+        </div>
+
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">
+            <i class="fas fa-check"></i> {{ feature }}
+          </li>
+        </ul>
+
+        <div class="service-price">{{ service.price }}</div>
+        <div class="service-actions">
+          <a routerLink="/contact" class="btn btn-primary">Demander un devis</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta section-padding">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Besoin d'un Service Personnalisé ?</h2>
+      <p>Contactez-nous pour discuter de vos besoins spécifiques</p>
+      <a routerLink="/contact" class="btn btn-primary btn-lg">
+        <i class="fas fa-phone"></i> Nous Contacter
+      </a>
+    </div>
+  </div>
+</section>

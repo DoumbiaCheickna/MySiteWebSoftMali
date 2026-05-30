@@ -1,0 +1,40 @@
+# Dépendances
+node_modules/
+npm-debug.log
+
+# Build
+dist/
+.angular/
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+GUIDE_*.md
+README*.md
+
+# Fichiers de config locaux
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+coverage/
+.nyc_output/
+
+# Firebase
+.firebase/
+.firebaserc
+firebase.json

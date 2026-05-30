@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Empêcher l'indexation des dossiers système
+Disallow: /css/
+Disallow: /js/
+Disallow: /assets/
+
+# Sitemap
+Sitemap: https://www.softmali.com/sitemap.xml

@@ -1,0 +1,161 @@
+<div class="page-header">
+  <div class="container">
+    <h1>À Propos de SOFTMALI</h1>
+    <p>Cabinet technologique orienté résultats pour les entreprises africaines ambitieuses</p>
+  </div>
+</div>
+
+<section class="about-intro section-padding">
+  <div class="container">
+    <div class="content-grid pro-grid">
+      <div class="text-content intro-copy">
+        <span class="kicker">Positionnement</span>
+        <h2>Une équipe d'experts qui combine vision business et exécution technique</h2>
+        <p>
+          Fondée par Cheickna Doumbia, SOFTMALI accompagne les organisations dans la conception,
+          le déploiement et l'industrialisation de solutions digitales robustes. Nous intervenons
+          avec une approche conseil, orientée impact métier et qualité opérationnelle.
+        </p>
+        <p>
+          Nos interventions couvrent le développement logiciel, la cybersécurité, le cloud et
+          l'optimisation des systèmes d'information. Chaque mission est cadrée avec des objectifs
+          mesurables, des jalons clairs et un pilotage transparent.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <strong>50+</strong>
+            <span>projets livrés</span>
+          </div>
+          <div class="highlight-card">
+            <strong>8+</strong>
+            <span>années d'expérience</span>
+          </div>
+          <div class="highlight-card">
+            <strong>100%</strong>
+            <span>engagement qualité</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-content about-summary-card">
+        <h3>Ce qui nous distingue</h3>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Gouvernance projet structurée</li>
+          <li><i class="fas fa-check-circle"></i> Standards de sécurité intégrés</li>
+          <li><i class="fas fa-check-circle"></i> Expertise locale, niveau international</li>
+          <li><i class="fas fa-check-circle"></i> Accompagnement de bout en bout</li>
+        </ul>
+        <a routerLink="/services" class="btn btn-outline">Découvrir nos services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder section-padding">
+  <div class="container">
+    <div class="founder-content founder-pro">
+      <div class="founder-image-wrap">
+        <img src="assets/ceo.jpg" alt="Cheickna Doumbia - Fondateur et CEO de SOFTMALI" class="founder-image" loading="lazy" />
+        <div class="founder-badge">
+          <i class="fas fa-award"></i>
+          <span>Fondateur & CEO</span>
+        </div>
+      </div>
+
+      <div class="founder-text">
+        <span class="kicker">Leadership</span>
+        <h2>Cheickna Doumbia</h2>
+        <h4>Ingénieur SI | Architecte Solutions | Dirigeant de SOFTMALI</h4>
+        <p>
+          Ingénieur logiciel passionné, Cheickna pilote les missions stratégiques de l'entreprise avec une
+          vision claire: aider les entreprises africaines à moderniser leurs opérations grâce à des systèmes fiables,
+          sécurisés et évolutifs.
+        </p>
+        <p>
+          Son approche combine proximité terrain, rigueur technique et culture de la performance pour transformer
+          des besoins complexes en solutions concrètes et pérennes.
+        </p>
+
+        <div class="founder-skills">
+          <span class="skill-tag">Développement Full-Stack</span>
+          <span class="skill-tag">Cloud & DevOps</span>
+          <span class="skill-tag">Cybersécurité</span>
+          <span class="skill-tag">Pilotage IT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leadership section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Co-fondateurs & Leadership</h2>
+      <p class="section-subtitle">Une direction complementaire pour piloter la vision, la qualite et l'execution</p>
+    </div>
+
+    <div class="leadership-grid">
+      <article class="leader-card">
+        <div class="leader-head">
+          <div class="leader-avatar">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <div>
+            <h3>Mahamoud Toure</h3>
+            <p class="leader-role">Co-fondateur & CTO</p>
+          </div>
+        </div>
+        <p class="leader-bio">
+          Specialiste de l'ingenierie logicielle a grande echelle. Il supervise l'architecture technique de tous nos projets critiques.
+        </p>
+      </article>
+
+      <article class="leader-card">
+        <div class="leader-head">
+          <div class="leader-avatar">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <h3>Dramane Coulibaly</h3>
+            <p class="leader-role">Co-fondateur & COO</p>
+          </div>
+        </div>
+        <p class="leader-bio">
+          Expert en agilite et en gestion de la cybersecurite. Il garantit la qualite et la continuite de nos services.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="values section-padding" id="valeurs">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nos Valeurs Fondamentales</h2>
+      <p class="section-subtitle">Les principes qui guident notre action quotidienne</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let value of values">
+        <div class="value-icon">
+          <i [class]="value.icon"></i>
+        </div>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta section-padding">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Rejoignez-Nous dans Cette Aventure</h2>
+      <p>Ensemble, construisons l'avenir numérique de l'Afrique</p>
+      <a routerLink="/contact" class="btn btn-primary btn-lg">
+        <i class="fas fa-phone"></i> Contactez-Nous
+      </a>
+    </div>
+  </div>
+</section>
